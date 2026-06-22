@@ -70,8 +70,8 @@ Online Retail Dataset (CSV)
             ▼
      Power BI Dashboard
 ```
-
-📸 Architecture Diagram
+---
+## 📸 Architecture Diagram
 
 ⚙️ Technologies Used
 🏢 Microsoft Fabric
@@ -93,7 +93,9 @@ SQL
 📊 Analytics & Visualization
 Power BI
 
-📁 Repository Structure
+---
+
+## 📁 Repository Structure
 ```
 project/
 │
@@ -116,8 +118,10 @@ project/
 │
 └── README.md
 ```
+---
 
-📂 Data Architecture
+## 📂 Data Architecture
+
 🟤 Bronze Layer
 The raw Online Retail dataset is uploaded into the Lakehouse without modification.
 
@@ -135,7 +139,10 @@ Kaggle Online Retail Dataset
 
 📸 Bronze Layer
 
-⚪ Silver Layer
+---
+
+## ⚪ Silver Layer
+
 Data is transformed using Dataflow Gen2.
 
 Transformations include:
@@ -166,7 +173,10 @@ is_return
 
 📸 Silver Layer
 
-🥇 Gold Layer
+---
+
+## 🥇 Gold Layer
+
 Business-ready datasets are generated through Fabric Notebooks (PySpark).
 
 The Gold layer contains curated analytical tables optimized for reporting and decision-making.
@@ -175,7 +185,11 @@ The Gold layer contains curated analytical tables optimized for reporting and de
 
 📸 Gold Layer
 
-📊 Business Analytics
+---
+
+
+## 📊 Business Analytics
+
 Revenue Analytics
 Total Revenue
 
@@ -204,8 +218,11 @@ Customer Lifetime Value
 
 RFM Segmentation
 
-🔄 Pipeline Workflow
-1️⃣ Data Ingestion
+---
+
+## 🔄 Pipeline Workflow
+## 1️⃣ Data Ingestion
+
 Upload Online Retail.csv into the Lakehouse
 
 Load raw data into the Bronze table
@@ -214,7 +231,10 @@ Preserve source data without modification
 
 📸 Bronze Table
 
-2️⃣ Data Transformation (Silver Layer)
+---
+
+
+## 2️⃣ Data Transformation (Silver Layer)
 Dataflow Gen2 performs:
 
 Data quality checks
@@ -231,7 +251,9 @@ Output is written to the Silver layer.
 
 📸 Silver Layer
 
-3️⃣ Business Processing (Gold Layer)
+---
+
+## 3️⃣ Business Processing (Gold Layer)
 Fabric Notebook performs:
 
 KPI calculations
@@ -250,12 +272,16 @@ Output is stored in Gold tables.
 
 📸 Gold Layer
 
-4️⃣ Reporting & Visualization
+---
+
+## 4️⃣ Reporting & Visualization
 Power BI consumes the Gold layer through a Semantic Model.
 
 📸 Dashboard
 
-📊 Key Insights
+---
+
+## 📊 Key Insights
 The final dashboard provides insights into:
 
 Revenue performance over time
@@ -268,7 +294,10 @@ Seasonal sales trends
 
 Customer segmentation opportunities
 
-🧠 What I Learned
+---
+
+## 🧠 What I Learned
+
 Through this project, I gained hands-on experience with:
 
 Microsoft Fabric architecture
@@ -285,7 +314,9 @@ Semantic Modeling
 
 Business Intelligence with Power BI
 
-🚀 Project Value
+---
+
+## 🚀 Project Value
 This project demonstrates:
 
 End-to-end analytics engineering workflow
@@ -300,7 +331,10 @@ Business-oriented analytics design
 
 Dashboard development and reporting
 
-🔮 Future Enhancements
+---
+
+## 🔮 Future Enhancements 
+
 Incremental data loading
 
 Real-time analytics
@@ -311,7 +345,10 @@ Machine Learning integration
 
 Advanced customer segmentation
 
-👨‍💻 Author
+---
+
+## 👨‍💻 Author
+
 Aboudoul Karim OUATTARA
 
 Azure Data Engineer | Microsoft Fabric Analytics Engineer | Power BI Developer
