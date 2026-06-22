@@ -109,178 +109,109 @@ project/
 │   ├── gold_layer.png
 │   └── dashboard.png
 │
-├── notebooks/
-│   └── silver_to_gold_analytics.ipynb
-│
-├── screenshots/
+├── data/
 │   ├── bronze/
 │   ├── silver/
 │   └── gold/
+│
+├── notebooks/
+│   └── silver_to_gold_analytics.ipynb
 │
 └── README.md
 ```
 ---
 
-## 📂 Data Architecture
+## 🏗️ Architecture & Pipeline Workflow
 
-🟤 Bronze Layer
-The raw Online Retail dataset is uploaded into the Lakehouse without modification.
+### 1️⃣ Bronze Layer – Data Ingestion
 
-Objectives:
+The Online Retail dataset is manually uploaded into the Fabric Lakehouse and loaded into the Bronze layer without modification.
 
-Preserve source data
+**Objectives:**
+- Preserve source data
+- Ensure traceability
+- Support future reprocessing
 
-Ensure traceability
-
-Support future reprocessing
-
-Source:
-
-Kaggle Online Retail Dataset
+**Source:**
+- Kaggle Online Retail Dataset
 
 📸 Bronze Layer
 
+![Bronze Layer](./architecture/bronze_layer.png)
+
 ---
 
-## ⚪ Silver Layer
+### 2️⃣ Silver Layer – Data Transformation
 
-Data is transformed using Dataflow Gen2.
+Dataflow Gen2 is used to clean, standardize, and enrich the raw data.
 
-Transformations include:
+**Transformations include:**
+- Missing value handling
+- Data type corrections
+- Duplicate removal
+- Column standardization
+- Revenue calculations
+- Business enrichment
 
-Missing value handling
-
-Data type corrections
-
-Duplicate removal
-
-Column standardization
-
-Revenue calculations
-
-Business enrichment
-
-New features created:
-
-line_total
-
-year
-
-month
-
-is_return
+**New features created:**
+- `line_total`
+- `year`
+- `month`
+- `is_return`
 
 📸 Dataflow Gen2
 
+![Dataflow Gen2](./architecture/dataflow_gen2.png)
+
 📸 Silver Layer
+
+![Silver Layer](./architecture/silver_layer.png)
 
 ---
 
-## 🥇 Gold Layer
+### 3️⃣ Gold Layer – Business Processing
 
-Business-ready datasets are generated through Fabric Notebooks (PySpark).
+Fabric Notebooks (PySpark) are used to generate business-ready analytical datasets.
 
-The Gold layer contains curated analytical tables optimized for reporting and decision-making.
+**Business Analytics:**
+
+#### Revenue Analytics
+- Total Revenue
+- Revenue by Month
+- Revenue by Country
+- Revenue Growth Trends
+
+#### Order Analytics
+- Total Orders
+- Average Order Value
+- Order Volume Trends
+
+#### Product Analytics
+- Top Products by Revenue
+- Top Products by Quantity Sold
+
+#### Customer Analytics
+- Top Customers by Spending
+- Customer Lifetime Value
+- RFM Segmentation
 
 📸 Notebook Processing
 
-📸 Gold Layer
-
----
-
-
-## 📊 Business Analytics
-
-Revenue Analytics
-Total Revenue
-
-Revenue by Month
-
-Revenue by Country
-
-Revenue Growth Trends
-
-Order Analytics
-Total Orders
-
-Average Order Value
-
-Order Volume Trends
-
-Product Analytics
-Top Products by Revenue
-
-Top Products by Quantity Sold
-
-Customer Analytics
-Top Customers by Spending
-
-Customer Lifetime Value
-
-RFM Segmentation
-
----
-
-## 🔄 Pipeline Workflow
-## 1️⃣ Data Ingestion
-
-Upload Online Retail.csv into the Lakehouse
-
-Load raw data into the Bronze table
-
-Preserve source data without modification
-
-📸 Bronze Table
-
----
-
-
-## 2️⃣ Data Transformation (Silver Layer)
-Dataflow Gen2 performs:
-
-Data quality checks
-
-Missing value handling
-
-Data type corrections
-
-Feature engineering
-
-Output is written to the Silver layer.
-
-📸 Dataflow Gen2
-
-📸 Silver Layer
-
----
-
-## 3️⃣ Business Processing (Gold Layer)
-Fabric Notebook performs:
-
-KPI calculations
-
-Product analytics
-
-Customer analytics
-
-RFM segmentation
-
-Business aggregations
-
-Output is stored in Gold tables.
-
-📸 Notebook
+![Notebook](./architecture/notebook_processing.png)
 
 📸 Gold Layer
 
+![Gold Layer](./architecture/gold_layer.png)
+
 ---
 
-## 4️⃣ Reporting & Visualization
-Power BI consumes the Gold layer through a Semantic Model.
+### 4️⃣ Reporting & Visualization
+
+Power BI consumes Gold layer datasets through a Semantic Model to deliver business insights and interactive dashboards.
 
 📸 Dashboard
 
----
+![Dashboard](./architecture/dashboard.png)
 
 ## 📊 Key Insights
 The final dashboard provides insights into:
