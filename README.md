@@ -28,7 +28,7 @@ It provides interactive business insights into:
 - 👥 Customer Behavior
 - 🎯 Business KPIs
 
-![Power BI Report](./architecture/powerbi_report.png)
+![Power BI Report](./architecture/online_retail_report.png)
 ---
 
 ## 🎯 Business Use Case
@@ -177,7 +177,7 @@ Business users can explore:
 
 📸 Power BI Report
 
-![Power BI Report](./architecture/powerbi_report.png)
+![Power BI Report](./architecture/online_retail_report.png)
 
 ---
 
