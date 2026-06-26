@@ -2,138 +2,90 @@
 
 ## 📌 Overview
 
-This project demonstrates the design and implementation of an **end-to-end analytics platform using Microsoft Fabric**.
+An end-to-end Data Engineering project built on **Microsoft Fabric**, implementing a modern **Lakehouse architecture** following the **Medallion Architecture (Bronze → Silver → Gold)**.
 
-The solution follows the **Medallion Architecture (Bronze → Silver → Gold)** to transform raw e-commerce data into trusted, business-ready datasets for reporting and decision-making.
-
-The project showcases several core Microsoft Fabric capabilities:
-
-- OneLake
-- Lakehouse
-- Dataflow Gen2
-- Notebooks (PySpark)
-- Semantic Models
-- Power BI
+The project demonstrates how raw e-commerce data can be ingested, transformed, modeled, and delivered as business-ready insights using Microsoft Fabric.
 
 ---
 
-## 📊 Dashboard Preview
+# 🏗️ Solution Architecture
 
-This section will be updated as the project progresses.
+The following architecture illustrates the complete data engineering workflow implemented in Microsoft Fabric.
 
-[![Dashboard](./architecture/dashboard.png)](./architecture/dashboard.png)
+![Architecture](./architecture/architecture.png)
 
+---
+
+## 📊 Power BI Report Preview
+
+The final report is built inside **Microsoft Fabric** using a **Semantic Model** based on the curated Gold layer.
+
+It provides interactive business insights into:
+
+- 💰 Sales Performance
+- 📈 Revenue Trends
+- 📦 Product Performance
+- 👥 Customer Behavior
+- 🎯 Business KPIs
+
+![Power BI Report](./architecture/powerbi_report.png)
 ---
 
 ## 🎯 Business Use Case
 
-An online retail company wants to:
+A retail company wants to leverage historical sales data to better understand its business performance.
 
-- 📊 Monitor sales performance
-- 📈 Analyze revenue trends
-- 📦 Identify top-selling products
-- 👥 Understand customer purchasing behavior
-- 🎯 Segment customers based on spending patterns
+The solution enables business users to:
 
----
-
-## 🏗️ Architecture
-
-```
-Online Retail Dataset (CSV)
-            │
-            ▼
-     OneLake / Lakehouse
-            │
-            ▼
-       Bronze Layer
-        (Raw Data)
-            │
-            ▼
-      Dataflow Gen2
-(Data Cleaning & Enrichment)
-            │
-            ▼
-       Silver Layer
-      (Curated Data)
-            │
-            ▼
-    Fabric Notebook
-         (PySpark)
-            │
-            ▼
-        Gold Layer
-            │
-            ▼
-      Semantic Model
-            │
-            ▼
-     Power BI Dashboard
-```
----
-## 📸 Architecture Diagram
-
-⚙️ Technologies Used
-
-🏢 Microsoft Fabric
-OneLake
-
-Lakehouse
-
-Dataflow Gen2
-
-Fabric Notebooks
-
-Semantic Models
-
-💻 Data Engineering
-PySpark
-
-SQL
-
-📊 Analytics & Visualization
-Power BI
+- Monitor sales performance
+- Analyze monthly revenue trends
+- Identify top-selling products
+- Discover the most valuable customers
+- Track key business KPIs
+- Support strategic decision-making
 
 ---
 
-## 📁 Repository Structure
-```
-project/
-│
-├── architecture/
-│   ├── architecture.png
-│   ├── bronze_layer.png
-│   ├── dataflow_gen2.png
-│   ├── silver_layer.png
-│   ├── notebook_processing.png
-│   ├── gold_layer.png
-│   └── dashboard.png
-│
-├── data/
-│   ├── bronze/
-│   ├── silver/
-│   └── gold/
-│
-├── notebooks/
-│   └── silver_to_gold_analytics.ipynb
-│
-└── README.md
-```
+# 🛠️ Technologies Used
+
+## Microsoft Fabric
+
+- OneLake
+- Lakehouse
+- Dataflow Gen2
+- Fabric Notebooks
+- Semantic Model
+- Power BI Report
+
+## Data Engineering
+
+- PySpark
+- SQL
+
+## Architecture
+
+- Lakehouse
+- Medallion Architecture
+- ETL / ELT
+
 ---
 
-## 🏗️ Architecture & Pipeline Workflow
+# 🏗️ Architecture & Pipeline Workflow
 
-### 1️⃣ Bronze Layer – Data Ingestion
+## 🟤 1. Bronze Layer — Data Ingestion
 
-The Online Retail dataset is manually uploaded into the Fabric Lakehouse and loaded into the Bronze layer without modification.
+The **Online Retail** dataset is manually uploaded into the Fabric Lakehouse and loaded into the Bronze layer without modification.
 
-**Objectives:**
-- Preserve source data
-- Ensure traceability
+### Objectives
+
+- Preserve raw data
+- Ensure data traceability
 - Support future reprocessing
+- Maintain a single source of truth
 
-**Source:**
-- Kaggle Online Retail Dataset
+**Source**
+
+- Kaggle — Online Retail Dataset
 
 📸 Bronze Layer
 
@@ -141,18 +93,20 @@ The Online Retail dataset is manually uploaded into the Fabric Lakehouse and loa
 
 ---
 
-### 2️⃣ Silver Layer – Data Transformation
+## ⚪ 2. Silver Layer — Data Transformation
 
-Dataflow Gen2 is used to clean, standardize, and enrich the raw data.
+The Bronze dataset is transformed using **Dataflow Gen2**.
 
-**Transformations include:**
+Data quality improvements include:
+
 - Missing value handling
-- Data type corrections
 - Duplicate removal
+- Data type corrections
 - Column standardization
-- Revenue calculations
+- Business enrichment
 
-**New features created:**
+Additional business attributes created:
+
 - `line_total`
 - `year`
 - `month`
@@ -168,33 +122,35 @@ Dataflow Gen2 is used to clean, standardize, and enrich the raw data.
 
 ---
 
-### 3️⃣ Gold Layer – Business Processing
+## 🥇 3. Gold Layer — Business Processing
 
-Fabric Notebooks (PySpark) are used to generate business-ready analytical datasets.
+Business-ready datasets are generated using **Microsoft Fabric Notebooks (PySpark)**.
 
-**Business Analytics:**
+The notebook creates analytical tables optimized for reporting and decision-making.
 
-#### Revenue Analytics
+### Revenue Analytics
+
 - Total Revenue
 - Revenue by Month
 - Revenue by Country
-- Revenue Growth Trends
 
-#### Order Analytics
+### Order Analytics
+
 - Total Orders
 - Average Order Value
-- Order Volume Trends
 
-#### Product Analytics
+### Product Analytics
+
 - Top Products by Revenue
 - Top Products by Quantity Sold
 
-#### Customer Analytics
-- Top Customers by Spending
+### Customer Analytics
+
+- Top Customers
 - Customer Lifetime Value
 - RFM Segmentation
 
-📸 Notebook Processing
+📸 Notebook
 
 ![Notebook](./architecture/notebook_processing.png)
 
@@ -204,84 +160,96 @@ Fabric Notebooks (PySpark) are used to generate business-ready analytical datase
 
 ---
 
-### 4️⃣ Reporting & Visualization
+## 📊 4. Semantic Model & Reporting
 
-Power BI consumes Gold layer datasets through a Semantic Model to deliver business insights and interactive dashboards.
+The curated Gold layer is exposed through a **Semantic Model**, which serves as the data source for an interactive **Power BI Report** built entirely in Microsoft Fabric.
 
-📸 Dashboard
+Business users can explore:
 
-![Dashboard](./architecture/dashboard.png)
+- Revenue trends
+- Customer behavior
+- Product performance
+- Sales KPIs
 
-## 📊 Key Insights
-The final dashboard provides insights into:
+📸 Semantic Model
 
-Revenue performance over time
+![Semantic Model](./architecture/semantic_model.png)
 
-Customer purchasing behavior
+📸 Power BI Report
 
-Product profitability
-
-Seasonal sales trends
-
-Customer segmentation opportunities
+![Power BI Report](./architecture/powerbi_report.png)
 
 ---
 
-## 🧠 What I Learned
+## 📁 Repository Structure
+```
+project/
+│
+├── architecture/
+│   ├── architecture.png
+│   ├── bronze_layer.png
+│   ├── dataflow_gen2.png
+│   ├── silver_layer.png
+│   ├── notebook_processing.png
+│   ├── semantic_model.png
+│   ├── gold_layer.png
+│   └── powerbi_report.png
+│
+├── notebooks/
+│   └── silver_to_gold_analytics.ipynb
+│
+└── README.md
+```
+---
 
-Through this project, I gained hands-on experience with:
+# 🎯 Skills Demonstrated
 
-Microsoft Fabric architecture
+This project demonstrates practical experience with:
 
-OneLake and Lakehouse concepts
-
-Dataflow Gen2 transformations
-
-Data engineering with Fabric Notebooks
-
-Medallion Architecture implementation
-
-Semantic Modeling
-
-Business Intelligence with Power BI
+- Microsoft Fabric
+- OneLake
+- Lakehouse Architecture
+- Medallion Architecture
+- Dataflow Gen2
+- PySpark
+- Data Engineering
+- Semantic Modeling
+- Business Intelligence
+- Power BI
+- Data Transformation
+- ETL / ELT Design
 
 ---
 
-## 🚀 Project Value
-This project demonstrates:
+# 🧠 What I Learned
 
-End-to-end analytics engineering workflow
+Through this project I gained hands-on experience in:
 
-Microsoft Fabric best practices
-
-Modern Lakehouse architecture
-
-Data transformation and enrichment
-
-Business-oriented analytics design
-
-Dashboard development and reporting
+- Designing a modern Lakehouse architecture
+- Implementing Medallion Architecture
+- Building scalable ETL pipelines
+- Transforming raw data into business-ready datasets
+- Developing analytical data models
+- Creating interactive Power BI reports inside Microsoft Fabric
 
 ---
 
-## 🔮 Future Enhancements 
+# 🚀 Project Value
 
-Incremental data loading
+This project demonstrates the ability to build an end-to-end Data Engineering solution using Microsoft Fabric, from raw data ingestion to interactive business reporting.
 
-Real-time analytics
+It showcases modern cloud data engineering practices, scalable Lakehouse design, and business-oriented analytics using Microsoft's unified analytics platform.
 
-Fabric Pipelines orchestration
-
-Machine Learning integration
-
-Advanced customer segmentation
 
 ---
 
-## 👨‍💻 Author
 
-Aboudoul Karim OUATTARA
+# 👨‍💻 Author
+
+**Aboudoul Karim OUATTARA**
 
 Azure Data Engineer | Microsoft Fabric Analytics Engineer | Power BI Developer
 
-📫 LinkedIn: https://www.linkedin.com/in/aboudoul-karim-ouattara-5baaba226/
+📫 LinkedIn:
+
+https://www.linkedin.com/in/aboudoul-karim-ouattara-5baaba226/
