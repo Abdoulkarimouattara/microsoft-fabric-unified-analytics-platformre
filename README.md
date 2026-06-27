@@ -61,3 +61,19 @@ Beyond the technical implementation, this repository documents the architectural
 * Native Power BI Integration
 * Production-inspired architecture
 * Complete technical case study
+
+# 💡 Why Microsoft Fabric?
+
+This project was intentionally built on **Microsoft Fabric** to demonstrate how a unified analytics platform can simplify modern Data Engineering.
+
+Unlike traditional architectures that rely on multiple cloud services, Microsoft Fabric brings data ingestion, storage, transformation, semantic modeling, and business intelligence into a single SaaS platform.
+
+Using the same retail analytics scenario as the companion Azure project, this case study highlights how a unified platform can reduce architectural complexity while maintaining enterprise-grade Data Engineering practices.
+
+| Traditional Analytics | Microsoft Fabric |
+|------------------------|------------------|
+| Multiple cloud services | Unified SaaS platform |
+| Separate storage | OneLake |
+| Multiple tools | Integrated analytics experience |
+| Separate governance | Unified governance |
+| External BI | Native Power BI |
