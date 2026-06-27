@@ -107,14 +107,6 @@ This layered architecture improves **traceability**, **data quality**, **maintai
 
 ---
 
-# ⚙️ Data Engineering Workflow
-
-The platform follows a streamlined workflow where each Fabric component has a clearly defined responsibility.
-
-![Data Engineering Workflow](./architecture/architecture.png)
-
----
-
 # 🔄 Low-Code + Code Integration
 
 One of Microsoft Fabric's greatest strengths is the ability to combine **low-code** and **code-first** development within the same platform.
