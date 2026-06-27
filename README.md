@@ -113,6 +113,13 @@ Once the raw data is available in the Bronze layer, **Dataflow Gen2** applies lo
 * Data type standardization
 * Business enrichment
 
+**Additional Business Attributes**
+
+* `line_total`
+* `year`
+* `month`
+* `is_return`
+
 📸 **Dataflow Gen2**
 
 ![Dataflow Gen2](./architecture/dataflow_gen2.png)
