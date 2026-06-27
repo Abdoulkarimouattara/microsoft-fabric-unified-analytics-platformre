@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./images/banner.png" alt="Microsoft Fabric Unified Analytics Platform Banner">
-</p>
-
 <h1 align="center">🚀 Microsoft Fabric Unified Analytics Platform</h1>
 
 <p align="center">
@@ -182,3 +178,124 @@ Finally, Power BI connects directly to the Semantic Model, allowing business use
 📸 **Power BI Report**
 
 ![Power BI Report](./architecture/online_retail_report.png)
+
+---
+
+# 🎯 Business Outcomes
+
+The platform transforms raw transactional data into trusted analytical assets, enabling business users to make faster and more informed decisions.
+
+### Key Outcomes
+
+- 📊 Centralized and trusted business data
+- ⚡ Automated data preparation
+- 📈 Consistent KPIs across reports
+- 🏗️ Scalable Lakehouse architecture
+- 📉 Reduced manual reporting effort
+- 🚀 Native end-to-end analytics with Microsoft Fabric
+
+--- 
+
+# 🛠️ Technology Stack
+
+| Category | Technologies |
+|----------|--------------|
+| **Platform** | Microsoft Fabric |
+| **Storage** | OneLake, Lakehouse |
+| **Data Integration** | Dataflow Gen2 |
+| **Data Processing** | Fabric Notebooks, PySpark |
+| **Data Modeling** | Semantic Model |
+| **Visualization** | Power BI |
+| **Languages** | Python, SQL |
+| **Architecture** | Medallion Architecture |
+
+---
+
+# 📂 Repository Structure
+
+```text
+project/
+│
+├── architecture/
+│   Architecture diagrams and platform screenshots
+│
+├── notebooks/
+│   PySpark business transformations
+│
+├── case-study/
+│   Complete technical documentation
+│
+├── images/
+│   Project assets and banner
+│
+└── README.md
+```
+
+---
+
+# 📖 Technical Case Study
+
+Beyond the technical implementation, this repository includes a comprehensive **consulting-style case study** documenting the complete engineering process behind the solution.
+
+The documentation covers:
+
+- Business Context
+- Business Challenges
+- Microsoft Fabric Architecture
+- Engineering Decisions
+- Production Readiness
+- Business Impact
+- Consultant's Retrospective
+
+📚 **Explore the `case-study/` directory to discover the complete documentation.**
+
+---
+
+# 🎯 Skills Demonstrated
+
+This project demonstrates practical experience with:
+
+- Microsoft Fabric
+- Lakehouse Architecture
+- OneLake
+- Dataflow Gen2
+- Fabric Notebooks
+- PySpark
+- Semantic Modeling
+- Power BI
+- Data Engineering
+- Business Analytics
+
+---
+
+# 🚀 Future Roadmap
+
+Future enhancements planned for this project include:
+
+- Delta Lake optimization
+- Fabric Pipelines
+- Real-Time Intelligence
+- Eventstream integration
+- Deployment Pipelines
+- CI/CD automation
+- Infrastructure as Code
+
+---
+
+# 👨‍💻 About the Author
+
+**Aboudoul Karim OUATTARA**
+
+Cloud Data Engineer specializing in Microsoft Azure and Microsoft Fabric, passionate about designing scalable data platforms and transforming raw data into trusted business insights.
+
+📧 **Email**
+
+ouattaraaboudoulkarim@gmail.com
+
+💼 **LinkedIn**
+
+https://www.linkedin.com/in/aboudoul-karim-ouattara-5baaba226/
+
+# 💭 Engineering Philosophy
+
+> **Modern Data Engineering is not about moving data from one system to another. It is about designing trusted, scalable platforms that empower better business decisions.**
