@@ -1,255 +1,63 @@
-# 🚀 Microsoft Fabric Medallion Architecture (Online Retail Analytics)
+<p align="center">
+  <img src="./images/banner.png" alt="Microsoft Fabric Unified Analytics Platform Banner">
+</p>
 
-## 📌 Overview
+<h1 align="center">🚀 Microsoft Fabric Unified Analytics Platform</h1>
 
-An end-to-end Data Engineering project built on **Microsoft Fabric**, implementing a modern **Lakehouse architecture** following the **Medallion Architecture (Bronze → Silver → Gold)**.
+<p align="center">
+Designing a modern unified analytics platform with Microsoft Fabric
+</p>
 
-The project demonstrates how raw e-commerce data can be ingested, transformed, modeled, and delivered as business-ready insights using Microsoft Fabric.
+<p align="center">
+A production-inspired end-to-end Data Engineering case study demonstrating how Microsoft Fabric unifies data ingestion, transformation, modeling, and business intelligence within a single analytics platform.
+</p>
 
----
+<p align="center">
 
-# 🏗️ Solution Architecture
+<a href="#-solution-architecture">Architecture</a> • <a href="#-lakehouse-overview">Lakehouse</a> • <a href="#-data-engineering-workflow">Workflow</a> • <a href="#-dashboard-preview">Dashboard</a> • <a href="#-technical-case-study">Case Study</a>
 
-The following architecture illustrates the complete data engineering workflow implemented in Microsoft Fabric.
-
-![Architecture](./architecture/architecture.png)
-
----
-
-## 📊 Power BI Report Preview
-
-The final report is built inside **Microsoft Fabric** using a **Semantic Model** based on the curated Gold layer.
-
-It provides interactive business insights into:
-
-- 💰 Sales Performance
-- 📈 Revenue Trends
-- 📦 Product Performance
-- 👥 Customer Behavior
-- 🎯 Business KPIs
-
-![Power BI Report](./architecture/online_retail_report.png)
----
-
-## 🎯 Business Use Case
-
-A retail company wants to leverage historical sales data to better understand its business performance.
-
-The solution enables business users to:
-
-- Monitor sales performance
-- Analyze monthly revenue trends
-- Identify top-selling products
-- Discover the most valuable customers
-- Track key business KPIs
-- Support strategic decision-making
+</p>
 
 ---
 
-# 🛠️ Technologies Used
+# 📖 Executive Summary
 
-## Microsoft Fabric
+Modern organizations often rely on multiple disconnected services to ingest, process, model, and visualize data. Managing these distributed architectures introduces operational complexity, governance challenges, and increased maintenance effort.
 
-- OneLake
-- Lakehouse
-- Dataflow Gen2
-- Fabric Notebooks
-- Semantic Model
-- Power BI Report
+This project demonstrates how **Microsoft Fabric** simplifies the modern analytics lifecycle by providing a unified Software-as-a-Service (SaaS) platform where data engineering, analytics, semantic modeling, and business intelligence coexist within a single environment.
 
-## Data Engineering
+Using a retail analytics scenario, the solution follows the **Medallion Architecture (Bronze → Silver → Gold)** while leveraging **OneLake**, **Dataflow Gen2**, **Fabric Notebooks**, **Semantic Models**, and **Power BI** to deliver trusted business insights.
 
-- PySpark
-- SQL
-
-## Architecture
-
-- Lakehouse
-- Medallion Architecture
-- ETL / ELT
+Beyond the technical implementation, this repository documents the architectural decisions, engineering practices, and production considerations behind the solution, making it a comprehensive technical case study.
 
 ---
 
-# 🏗️ Architecture & Pipeline Workflow
+# 📊 Project at a Glance
 
-## 🟤 1. Bronze Layer — Data Ingestion
-
-The **Online Retail** dataset is manually uploaded into the Fabric Lakehouse and loaded into the Bronze layer without modification.
-
-### Objectives
-
-- Preserve raw data
-- Ensure data traceability
-- Support future reprocessing
-- Maintain a single source of truth
-
-**Source**
-
-- Kaggle — Online Retail Dataset
-
-📸 Bronze Layer
-
-![Bronze Layer](./architecture/bronze_layer.png)
+| Category              | Details                              |
+| --------------------- | ------------------------------------ |
+| **Industry**          | Retail & E-commerce                  |
+| **Scenario**          | Unified Analytics Platform           |
+| **Platform**          | Microsoft Fabric                     |
+| **Storage**           | OneLake                              |
+| **Architecture**      | Lakehouse + Medallion                |
+| **Data Integration**  | Dataflow Gen2                        |
+| **Data Processing**   | Fabric Notebooks (PySpark)           |
+| **Analytics**         | Semantic Model                       |
+| **Visualization**     | Power BI                             |
+| **Engineering Focus** | Unified Analytics & Data Engineering |
 
 ---
 
-## ⚪ 2. Silver Layer — Data Transformation
+# ⭐ Key Highlights
 
-The Bronze dataset is transformed using **Dataflow Gen2**.
-
-Data quality improvements include:
-
-- Missing value handling
-- Duplicate removal
-- Data type corrections
-- Column standardization
-- Business enrichment
-
-Additional business attributes created:
-
-- `line_total`
-- `year`
-- `month`
-- `is_return`
-
-📸 Dataflow Gen2
-
-![Dataflow Gen2](./architecture/dataflow_gen2.png)
-
-📸 Silver Layer
-
-![Silver Layer](./architecture/silver_layer.png)
-
----
-
-## 🥇 3. Gold Layer — Business Processing
-
-Business-ready datasets are generated using **Microsoft Fabric Notebooks (PySpark)**.
-
-The notebook creates analytical tables optimized for reporting and decision-making.
-
-### Revenue Analytics
-
-- Total Revenue
-- Revenue by Month
-- Revenue by Country
-
-### Order Analytics
-
-- Total Orders
-- Average Order Value
-
-### Product Analytics
-
-- Top Products by Revenue
-- Top Products by Quantity Sold
-
-### Customer Analytics
-
-- Top Customers
-- Customer Lifetime Value
-- RFM Segmentation
-
-📸 Notebook
-
-![Notebook](./architecture/notebook_processing.png)
-
-📸 Gold Layer
-
-![Gold Layer](./architecture/gold_layer.png)
-
----
-
-## 📊 4. Semantic Model & Reporting
-
-The curated Gold layer is exposed through a **Semantic Model**, which serves as the data source for an interactive **Power BI Report** built entirely in Microsoft Fabric.
-
-Business users can explore:
-
-- Revenue trends
-- Customer behavior
-- Product performance
-- Sales KPIs
-
-📸 Semantic Model
-
-![Semantic Model](./architecture/semantic_model.png)
-
-📸 Power BI Report
-
-![Power BI Report](./architecture/online_retail_report.png)
-
----
-
-## 📁 Repository Structure
-```
-project/
-│
-├── architecture/
-│   ├── architecture.png
-│   ├── bronze_layer.png
-│   ├── dataflow_gen2.png
-│   ├── silver_layer.png
-│   ├── notebook_processing.png
-│   ├── semantic_model.png
-│   ├── gold_layer.png
-│   └── powerbi_report.png
-│
-├── notebooks/
-│   └── silver_to_gold_analytics.ipynb
-│
-└── README.md
-```
----
-
-# 🎯 Skills Demonstrated
-
-This project demonstrates practical experience with:
-
-- Microsoft Fabric
-- OneLake
-- Lakehouse Architecture
-- Medallion Architecture
-- Dataflow Gen2
-- PySpark
-- Data Engineering
-- Semantic Modeling
-- Business Intelligence
-- Power BI
-- Data Transformation
-- ETL / ELT Design
-
----
-
-# 🧠 What I Learned
-
-Through this project I gained hands-on experience in:
-
-- Designing a modern Lakehouse architecture
-- Implementing Medallion Architecture
-- Building scalable ETL pipelines
-- Transforming raw data into business-ready datasets
-- Developing analytical data models
-- Creating interactive Power BI reports inside Microsoft Fabric
-
----
-
-# 🚀 Project Value
-
-This project demonstrates the ability to build an end-to-end Data Engineering solution using Microsoft Fabric, from raw data ingestion to interactive business reporting.
-
-It showcases modern cloud data engineering practices, scalable Lakehouse design, and business-oriented analytics using Microsoft's unified analytics platform.
-
-
----
-
-
-# 👨‍💻 Author
-
-**Aboudoul Karim OUATTARA**
-
-Azure Data Engineer | Microsoft Fabric Analytics Engineer | Power BI Developer
-
-📫 LinkedIn:
-
-https://www.linkedin.com/in/aboudoul-karim-ouattara-5baaba226/
+* End-to-End Microsoft Fabric Analytics Solution
+* Unified SaaS Analytics Platform
+* Lakehouse Architecture
+* Medallion Architecture (Bronze → Silver → Gold)
+* Dataflow Gen2 for data transformation
+* Fabric Notebooks with PySpark
+* Semantic Model
+* Native Power BI Integration
+* Production-inspired architecture
+* Complete technical case study
